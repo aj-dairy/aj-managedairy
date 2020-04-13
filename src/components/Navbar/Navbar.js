@@ -12,17 +12,7 @@ import Fade from '@material-ui/core/Fade';
 import PropTypes from 'prop-types';
 import Typography from '@material-ui/core/Typography';
 import Box from '@material-ui/core/Box';
-
 import './Navbar.css';
-import {
-  BrowserRouter as Router,
-  Switch,
-  Route,
-  Link
-} from "react-router-dom";
-import Home from '../Home';
-import Login from '../Login';
-
 
   const Navbar = () => {  
     const classes =  makeStyles((theme) => ({
@@ -89,16 +79,15 @@ import Login from '../Login';
       setValue(newValue);
     };
     return (
-      <Router>
+     
      <div>
-
-        <AppBar position="fixed">
+        <AppBar position="relative">
         <Toolbar>
          <IconButton edge="start" className={classes.menuButton} color="inherit" aria-label="menu">          
         </IconButton>               
         <MenuIcon onClick={handleClick} />
-          <Tabs position="spacing"  scrollButtons="auto" value={value} onChange={handleChange}>        
-          <Tab label="&nbsp;Daily Reports&nbsp;" {...a11yProps(0)}/>
+          <Tabs position="spacing"  scrollButtons="auto" value={value} onChange={handleChange}>                    
+           <Tab  label="&nbsp;Daily Reports&nbsp;" {...a11yProps(0)}/>
           <Tab label="&nbsp;Cost Sheets&nbsp;" {...a11yProps(1)} />
           <Tab label="&nbsp;Procurement&nbsp;" {...a11yProps(2)} />
           <Tab label="&nbsp;Profiles&nbsp;" />
@@ -117,30 +106,8 @@ import Login from '../Login';
         <MenuItem onClick={handleClose}>My account</MenuItem>
         <MenuItem onClick={handleClose}>Logout</MenuItem>
        </Menu>
-     </AppBar>
-     <TabPanel value={value} index={0}>
-        Item One
-      </TabPanel>
-      <TabPanel value={value} index={1}>
-        Item Two
-      </TabPanel>
-      <TabPanel value={value} index={2}>
-        Item Three
-      </TabPanel>
-
-        </div>
-        <Switch>
-          <Route exact path="/">
-            <Login />
-          </Route>
-          <Route path="/about">
-          <Home />
-          </Route>
-          <Route path="/home">
-          <Home />
-          </Route>
-        </Switch>
-        </Router>
+     </AppBar>    
+        </div> 
     ); 
 }
 
