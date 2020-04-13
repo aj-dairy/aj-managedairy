@@ -3,5 +3,26 @@
 */
 
 .Home {
-    /* propertys here */
+   /* The image used */
+
+
+  /* Full height */
+  height: 100%;
+  width: 100%;
+
+  /* Center and scale the image nicely */
+
+  background: url(../../content/images/cow-feed.jpg) no-repeat center center fixed;
+  -webkit-background-size: cover;
+  -moz-background-size: cover;
+  -o-background-size: cover;
+  background-size: cover;
+
+}
+
+.margin{
+    margin-top: 20px;;
+}
+.myCustom{
+   
 }
